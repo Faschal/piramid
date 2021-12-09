@@ -303,7 +303,7 @@
                     </circle>                 
                 </svg>
                 <img id="meter_needle" src="svg-meter-gauge-needle.svg" alt="">
-                <input id="slider" type="text" value="80" disabled/> 
+                <input id="slider" type="text" value="99" disabled/> 
                 <label id="lbl" id="value" for="">%</label>
             </div>
         </div>
@@ -491,8 +491,8 @@
 
         var cf = 2 * Math.PI * r;
         var semi_cf = cf / 2;
-        var semi_cf_1by3 = semi_cf / 13;
-        var semi_cf_2by3 = semi_cf_1by3 * 2;
+        var semi_cf_1by3 = semi_cf / 13;  //Change red bar size
+        var semi_cf_2by3 = semi_cf_1by3 * 2; //Change yellow size        
         document.querySelector('#outline_curves')
             .setAttribute('stroke-dasharray', semi_cf + ',' + cf);
         document.querySelector('#low')
@@ -500,7 +500,7 @@
         document.querySelector('#avg')
             .setAttribute('stroke-dasharray', semi_cf_2by3 + ',' + cf);
         document.querySelector('#high')
-            .setAttribute('stroke-dasharray', 6 + ',' + cf);		
+            .setAttribute('stroke-dasharray', 6 + ',' + cf); //Change green size		
         var slider = document.querySelector('#slider');		
         var mask = document.querySelector('#mask');
         var meter_needle =  document.querySelector('#meter_needle');
